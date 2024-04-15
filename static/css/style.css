@@ -1,0 +1,322 @@
+input[type=file] {
+    display: none;
+}
+
+body {
+    font-family: "Montserrat ExtraBold", serif;
+    color: #FFFFFF;
+    background: #211D1D;
+}
+
+input[type=submit] {
+    display: none;
+}
+
+.file-input-btn {
+    margin-left: 70px;
+    margin-top: 95px;
+    width: 435px;
+    height: 108px;
+    background-color: #A52D1D;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.main-div {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1500px;
+    height: 300px;
+    background: rgba(89, 85, 85, 0.41);
+    border-radius: 50px;
+}
+
+.convert-main-div {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1500px;
+    height: 150px;
+    background: rgba(89, 85, 85, 0.41);
+    border-radius: 50px;
+}
+
+.file-input {
+    box-sizing: border-box;
+    position: absolute;
+    width: 435px;
+    height: 108px;
+    background: #A52D1D;
+    border: 1px solid #000000;
+    border-radius: 10px;
+}
+
+.submit-btn {
+    margin-left: 920px;
+    margin-top: 95px;
+    position: absolute;
+    width: 489px;
+    height: 108px;
+    background: #A52D1D;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.from-regle {
+    margin-top: 95px;
+    margin-left: 70px;
+    width: 120px;
+    height: 108px;
+    background: #A52D1D;
+    cursor: pointer;
+}
+
+.from-regle img {
+    margin-left: 4px;
+}
+
+.select-file {
+    line-height: 108px;
+    vertical-align: middle;
+    margin-left: 43px;
+    font-size: 40px;
+}
+
+.sbmt-btn {
+    line-height: 108px;
+    vertical-align: middle;
+    margin-left: 130px;
+    font-size: 40px;
+}
+
+.convert-title {
+    font-size: 80px;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
+
+.convert-subtitle {
+    width: 752px;
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.file-name {
+    font-family: "Montserrat", serif;
+    font-size: 30px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 10px;
+}
+
+.file-size {
+    font-family: "Montserrat", serif;
+    font-size: 30px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 20px;
+}
+
+.convert-select {
+    font-size: 50px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    height: 108px;
+    background: #A52D1D;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.convert-submit-btn {
+    margin-top: 80px;
+    margin-left: 1000px;
+    width: 489px;
+    height: 108px;
+    background: #A52D1D;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.convert-sbmt-btn {
+    font-size: 40px;
+    line-height: 108px;
+    vertical-align: middle;
+    margin-left: 68px;
+}
+
+.regle-navbar {
+    width: auto;
+    height: 90px;
+    background: #964B06;
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.nav-div {
+    display: flex;
+}
+
+.nav-regle {
+    margin-left: 20px;
+    font-family: "Jua", sans-serif;
+    font-size: 65px;
+    vertical-align: middle;
+}
+
+.a-glav {
+    font-size: 25px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 150px;
+    color: #FFFFFF;
+}
+
+.a-convert {
+    font-size: 25px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 50px;
+    color: #FFFFFF;
+}
+
+.a-cloud {
+    font-size: 25px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 50px;
+    color: #FFFFFF;
+}
+
+.button-nav {
+    width: 200px;
+    height: 60px;
+    border-radius: 20px;
+    border: none;
+    color: #FFFFFF;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 320px;
+    background: #A52D1D;
+    text-align: center;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.regle-h1 {
+    font-family: "Jua", sans-serif;
+    text-decoration: underline;
+    text-underline-offset: 50px;
+    font-size: 130px;
+    text-align: center;
+    color: #A52D1D;
+}
+
+.firs-p {
+    margin-top: 70px;
+    margin-left: 50px;
+    margin-right: 50px;
+    font-family: "Montserrat", serif;
+    font-size: 30px;
+    text-align: left;
+}
+
+.cloud-div {
+    display: flex;
+}
+
+.cloud-input-file {
+    width: 235px;
+    height: 68px;
+    cursor: pointer;
+    background: #A52D1D;
+    border-radius: 10px;
+    margin-left: 50px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    text-align: center;
+    line-height: 68px;
+    vertical-align: middle;
+}
+
+.cloud-input-file-text {
+    font-size: 25px;
+}
+
+.cloud-submit {
+    width: 190px;
+    height: 68px;
+    cursor: pointer;
+    background: #A52D1D;
+    border-radius: 10px;
+    margin-left: 50px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    text-align: center;
+    line-height: 68px;
+    vertical-align: middle;
+}
+
+.cloud-submit-text {
+    font-size: 25px;
+}
+
+.cloud-main-div {
+    display: flex;
+    height: 70px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 15px;
+    border-radius: 50px;
+    background: #595555;
+}
+
+.button-download {
+    width: 200px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: auto;
+    margin-right: 60px;
+    background: #A52D1D;
+    border: none;
+    border-radius: 10px;
+    color: #FFFFFF;
+    font-size: 35px;
+}
+
+.button-delete {
+    width: 70px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 50px;
+    background: #A52D1D;
+    border: none;
+    border-radius: 10px;
+    color: #FFFFFF;
+    font-size: 40px;
+}
+
+.cloud-filename {
+    font-family: "Montserrat", serif;
+    font-size: 25px;
+    margin-left: 50px;
+    margin-top: 17px;
+    margin-bottom: 20px;
+}
+
+.cloud-size {
+    font-family: "Montserrat", serif;
+    font-size: 25px;
+    margin-top: 17px;
+    margin-bottom: 20px;
+    margin-left: 50px;
+}

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <link href="/static/css/style.css" rel="stylesheet"/>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+          rel="stylesheet">
+
+    <h1 class="convert-title">Конвертер файлов</h1>
+    <div class="convert-subtitle">
+        Выберите необходимый формат файлов и нажмите кнопку "Конвертировать"
+    </div>
+
+    <form enctype="multipart/form-data" method="post">
+        <div class="convert-main-div">
+            <p class="file-name">
+                {{ filename }}
+            </p>
+            <p class="file-size">
+                {{ file_size }}
+            </p>
+            <select class="convert-select" name="to_convert">
+                {% for item in formats[type_file] %}
+                    <option value={{ item }}>{{ item }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <label class="convert-submit-btn">
+            <span class="convert-sbmt-btn">Конвертировать</span>
+            <input type="submit" value=Upload>
+        </label>
+    </form>
+
+{% endblock %}

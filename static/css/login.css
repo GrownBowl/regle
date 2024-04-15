@@ -1,0 +1,83 @@
+body {
+    font-family: "Montserrat ExtraBold", serif;
+    color: #FFFFFF;
+    background: #211D1D;
+}
+
+.regle-navbar {
+    width: auto;
+    height: 90px;
+    background: #964B06;
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.nav-div {
+    display: flex;
+}
+
+.nav-regle {
+    margin-left: 20px;
+    font-family: "Jua", sans-serif;
+    font-size: 65px;
+    vertical-align: middle;
+}
+
+.a-glav {
+    font-size: 25px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 150px;
+    color: #FFFFFF;
+}
+
+.a-convert {
+    font-size: 25px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 50px;
+    color: #FFFFFF;
+}
+
+.a-cloud {
+    font-size: 25px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 50px;
+    color: #FFFFFF;
+}
+
+.button-nav {
+    width: 200px;
+    height: 60px;
+    border-radius: 20px;
+    border: none;
+    color: #FFFFFF;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 320px;
+    background: #A52D1D;
+    text-align: center;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+
+.admin-div {
+    margin-top: 30px;
+    display: grid;
+    font-family: "Montserrat", serif;
+    background: #595555;
+    border-radius: 10px;
+}
+
+.p-name {
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 4px;
+}
+
+.p-content {
+    margin-left: 5px;
+    margin-bottom: 3px;
+}
