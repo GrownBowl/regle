@@ -1,10 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
-    <link href="/static/css/style.css" rel="stylesheet" />
+    <link href="/static/css/style.css" rel="stylesheet"/>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+          rel="stylesheet">
     <h1 class="convert-title">Конвертер файлов</h1>
     <div class="convert-subtitle">
         Загрузите свой файл ниже, чтобы начать его конвертацию
@@ -19,11 +20,12 @@
                 <input type="submit" value=Upload>
                 <span class="sbmt-btn">Загрузить</span>
             </label>
-            {% if current_user.is_authenticated %}
-                <div class="from-regle">
-                    <img src="/static/img/from_cloud.png" alt="reagle" />
-                </div>
-            {% endif %}
         </div>
     </form>
+    {% if current_user.is_authenticated %}
+        <div class="from-regle">
+            <button onclick="onclick=document.location='/convert_from_cloud'"><img
+                    src="/static/img/from_cloud.png" alt="file from cloud"/></button>
+        </div>
+    {% endif %}
 {% endblock %}

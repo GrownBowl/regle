@@ -72,19 +72,34 @@ def cloud():
     return render_template("cloud.html", storage=storage)
 
 
-@app.route('/convertor/<filename>', methods=["POST", "GET"])
-def convertor(filename):
-    size = human_read_format(os.path.getsize(os.path.join(app.config['UPLOAD_FOLDER'], filename)))
+@app.route('/convertor/<filename>/<int:from_cloud>', methods=["POST", "GET"])
+def convertor(filename, from_cloud):
+    if from_cloud:
+        size = human_read_format(os.path.getsize(f"users_date\\{current_user.email}\\{filename}"))
+
+    else:
+        size = human_read_format(os.path.getsize(os.path.join(app.config['UPLOAD_FOLDER'], filename)))
 
     if request.method == "POST":
         to_convert = request.form.get('to_convert')
-        convertapi.convert(to_convert, {"File": f"{UPLOAD_FOLDER}\\{filename}"},
-                           from_format=get_file_extension(filename)).save_files(DOWNLOAD_FOLDER)
+        if from_cloud:
+            convertapi.convert(to_convert, {"File": f"users_date\\{current_user.email}\\{filename}"},
+                               from_format=get_file_extension(filename)).save_files(DOWNLOAD_FOLDER)
+        else:
+            convertapi.convert(to_convert, {"File": f"{UPLOAD_FOLDER}\\{filename}"},
+                               from_format=get_file_extension(filename)).save_files(DOWNLOAD_FOLDER)
 
         return send_from_directory(DOWNLOAD_FOLDER, f'{get_only_file_name(filename)}.{to_convert}')
 
     return render_template("converter.html", filename=filename, formats=convertible,
                            type_file=get_file_extension(filename), file_size=size)
+
+
+@app.route('/convert_from_cloud')
+def convert_from_cloud():
+    storage = get_storage(f"users_date/{current_user.email}")
+
+    return render_template("convert_from_clod.html", storage=storage)
 
 
 @app.route('/upload', methods=['POST', "GET"])
@@ -100,7 +115,7 @@ def upload():
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 
-            return redirect(url_for("convertor", filename=filename))
+            return redirect(url_for("convertor", filename=filename, from_cloud=0))
 
     return render_template("upload_file.html")
 
