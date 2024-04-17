@@ -47,6 +47,21 @@ body {
     color: #FFFFFF;
 }
 
+.a-glav:hover {
+    color: gray;
+    text-decoration: none;
+}
+
+.a-convert:hover {
+    color: gray;
+    text-decoration: none;
+}
+
+.a-cloud:hover {
+    color: gray;
+    text-decoration: none;
+}
+
 .button-nav {
     width: 200px;
     height: 60px;
@@ -80,4 +95,14 @@ body {
 .p-content {
     margin-left: 5px;
     margin-bottom: 3px;
+}
+
+.go-reg {
+    margin-top: 5px;
+    color: #FFFFFF;
+    text-decoration: underline;
+}
+
+.go-reg:hover {
+    color: gray;
 }

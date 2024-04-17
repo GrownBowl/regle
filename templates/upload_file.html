@@ -10,8 +10,8 @@
     <div class="convert-subtitle">
         Загрузите свой файл ниже, чтобы начать его конвертацию
     </div>
-    <form enctype="multipart/form-data" method="POST">
-        <div class="main-div">
+    <div class="main-div">
+        <form enctype="multipart/form-data" method="POST">
             <label class="file-input-btn">
                 <input class="file-input" type="file" name="file">
                 <span class="select-file">Выберите файл</span>
@@ -20,12 +20,10 @@
                 <input type="submit" value=Upload>
                 <span class="sbmt-btn">Загрузить</span>
             </label>
-        </div>
-    </form>
-    {% if current_user.is_authenticated %}
-        <div class="from-regle">
-            <button onclick="onclick=document.location='/convert_from_cloud'"><img
-                    src="/static/img/from_cloud.png" alt="file from cloud"/></button>
-        </div>
-    {% endif %}
+        </form>
+        {% if current_user.is_authenticated %}
+                <button class="from-regle" onclick="onclick=document.location='/convert_from_cloud'"><img
+                        src="/static/img/from_cloud.png" alt="file from cloud"/></button>
+        {% endif %}
+    </div>
 {% endblock %}

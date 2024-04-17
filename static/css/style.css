@@ -53,7 +53,7 @@ input[type=submit] {
 }
 
 .submit-btn {
-    margin-left: 920px;
+    margin-left: 420px;
     margin-top: 95px;
     position: absolute;
     width: 489px;
@@ -70,10 +70,8 @@ input[type=submit] {
     height: 108px;
     background: #A52D1D;
     cursor: pointer;
-}
-
-.from-regle img {
-    margin-left: 4px;
+    border: none;
+    border-radius: 10px;
 }
 
 .select-file {
@@ -195,6 +193,21 @@ input[type=submit] {
     margin-bottom: auto;
     margin-left: 50px;
     color: #FFFFFF;
+}
+
+.a-glav:hover {
+    color: gray;
+    text-decoration: none;
+}
+
+.a-convert:hover {
+    color: gray;
+    text-decoration: none;
+}
+
+.a-cloud:hover {
+    color: gray;
+    text-decoration: none;
 }
 
 .button-nav {
