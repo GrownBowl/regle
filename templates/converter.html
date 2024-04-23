@@ -15,12 +15,14 @@
 
     <form enctype="multipart/form-data" method="post">
         <div class="convert-main-div">
-            <p class="file-name">
-                {{ filename }}
-            </p>
-            <p class="file-size">
-                {{ file_size }}
-            </p>
+            <div style="display: grid; margin-left: 15px">
+                {% for file in files %}
+                    <p class="file-name">
+                        {{ file[0] }}  {{ file[1] }}
+                    </p>
+                {% endfor %}
+            </div>
+
             <select class="convert-select" name="to_convert">
                 {% for item in formats[type_file] %}
                     <option value={{ item }}>{{ item }}</option>

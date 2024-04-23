@@ -10,10 +10,13 @@
     <div class="convert-subtitle">
         Загрузите свой файл ниже, чтобы начать его конвертацию
     </div>
+    <div style="color: #A52D1D">
+        {{ message }}
+    </div>
     <div class="main-div">
         <form enctype="multipart/form-data" method="POST">
             <label class="file-input-btn">
-                <input class="file-input" type="file" name="file">
+                <input class="file-input" type="file" name="files" multiple="multiple">
                 <span class="select-file">Выберите файл</span>
             </label>
             <label class="submit-btn">

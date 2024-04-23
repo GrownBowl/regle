@@ -37,7 +37,7 @@ input[type=submit] {
     margin-left: auto;
     margin-right: auto;
     width: 1500px;
-    height: 150px;
+    min-height: 80px;
     background: rgba(89, 85, 85, 0.41);
     border-radius: 50px;
 }
@@ -109,7 +109,7 @@ input[type=submit] {
     font-size: 30px;
     margin-top: auto;
     margin-bottom: auto;
-    margin-left: 10px;
+    margin-left: 30px;
 }
 
 .file-size {
@@ -127,7 +127,7 @@ input[type=submit] {
     margin-left: auto;
     margin-right: auto;
     width: 200px;
-    height: 108px;
+    height: 60px;
     background: #A52D1D;
     color: #fff;
     border: none;

@@ -28,7 +28,7 @@ def create_directory(name):
 
 def allowed_file(filename):
     return '.' in filename and \
-           filename.rsplit('.', 1)[1] in ALLOWED_EXTENSIONS
+        filename.rsplit('.', 1)[1] in ALLOWED_EXTENSIONS
 
 
 def get_file_extension(filename):
@@ -48,3 +48,15 @@ def human_read_format(size):
         count += 1
 
     return f"{round(size)}{format[count]}"
+
+
+def check_same_extension(list_files):
+    extension = set()
+
+    for file_name in list_files:
+        extension.add(get_file_extension(file_name.filename))
+
+    if len(extension) > 1:
+        return False
+
+    return True
