@@ -97,6 +97,16 @@ def reset_password(token):
 
     form = ResetPasswordForm()
     if form.validate_on_submit():
+        if form.password.data != form.password_again.data:
+            return render_template('reset_password.html',
+                                   form=form,
+                                   message="Пароли не совпадают")
+
+        if not check_password(form.password.data):
+            return render_template('reset_password.html', form=form,
+                                   message="Пароль должен быть не менее 8 симвловол и содержать минимум одну букву в "
+                                           "верхнем регистре, одну цифру и один специальный символ")
+
         db_sess = db_session.create_session()
         new_pass_user = db_sess.query(User).filter(User.email == email).first()
         new_pass_user.hashed_password = generate_password_hash(form.password.data)
@@ -117,6 +127,17 @@ def admin():
     return render_template('admin_panel.html', bugs=bugs)
 
 
+@app.route('/admin_edit_roles', methods=["POST", "GET"])
+def edit_roles():
+    if current_user.role != "Администратор":
+        return "У Вас нет доступа к этой странице!"
+
+    db_sess = db_session.create_session()
+    users = db_sess.query(User).all()
+
+    return
+
+
 @app.route('/errors', methods=["POST", "GET"])
 def errors_menu():
     form = ErrorsForm()
@@ -134,6 +155,7 @@ def errors_menu():
 
 
 @app.route('/')
+@app.route('/index')
 def main_menu():  # put application's code here
     return render_template("index.html")
 
@@ -165,9 +187,14 @@ def convertor(filename, from_cloud):
                                from_format=get_file_extension(filename)).save_files(DOWNLOAD_FOLDER)
         else:
             for name in file_names:
-                convertapi.convert(to_convert, {"File": f"{UPLOAD_FOLDER}\\{name}"},
-                                   from_format=get_file_extension(filename)).save_files(
-                    f"users_date\\{current_user.email}")
+                if len(file_names) > 1:
+                    convertapi.convert(to_convert, {"File": f"{UPLOAD_FOLDER}\\{name}"},
+                                       from_format=get_file_extension(filename)).save_files(
+                        f"users_date\\{current_user.email}")
+                else:
+                    convertapi.convert(to_convert, {"File": f"{UPLOAD_FOLDER}\\{name}"},
+                                       from_format=get_file_extension(filename)).save_files(
+                        'temp_to_download')
 
         if len(file_names) > 1:
             return redirect("/cloud")
@@ -255,6 +282,12 @@ def reqister():
             return render_template('register.html', title='Регистрация',
                                    form=form,
                                    message="Пароли не совпадают")
+
+        if not check_password(form.password.data):
+            return render_template('register.html', title='Регистрация', form=form,
+                                   message="Пароль должен быть не менее 8 симвловол и содержать минимум одну букву в "
+                                           "верхнем регистре, одну цифру и один специальный символ")
+
         db_sess = db_session.create_session()
         if db_sess.query(User).filter(User.email == form.email.data).first():
             return render_template('register.html', title='Регистрация',
@@ -269,7 +302,8 @@ def reqister():
         db_sess.add(user)
         db_sess.commit()
         create_directory(form.email.data)
-        return redirect('/login')
+        return redirect(url_for('login'))
+
     return render_template('register.html', title='Регистрация', form=form)
 
 
@@ -300,7 +334,7 @@ def logout():
 
 def main():
     db_session.global_init("db/database.db")
-    app.run()
+    app.run(debug=True)
 
 
 if __name__ == '__main__':

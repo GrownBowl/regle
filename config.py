@@ -22,3 +22,36 @@ convertible = {
     "xls": ["xlsx", "csv"],
     "xlsx": ["csv", "pdf", "xls", ],
 }
+
+
+def check_password(password: str) -> bool:
+    count_digits = 0
+    count_uppers = 0
+    count_lowers = 0
+    count_special_symbols = 0
+
+    special_symbols = ['~', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+', '`', '-', '=']
+
+    if len(password) < 8:
+        return False
+
+    for num in password:
+        if num in special_symbols:
+            count_special_symbols += 1
+
+        if num.isdigit():
+            count_digits += 1
+
+        if num.islower():
+            count_lowers += 1
+
+        if num.isupper():
+            count_uppers += 1
+
+    if count_uppers < 1 or count_lowers < 1 or count_special_symbols < 1:
+        return False
+
+    if count_digits < 1:
+        return False
+
+    return True
