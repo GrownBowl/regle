@@ -1,4 +1,6 @@
 import os
+import shutil
+
 from config import *
 
 ALLOWED_EXTENSIONS = set(
@@ -60,3 +62,8 @@ def check_same_extension(list_files):
         return False
 
     return True
+
+
+def clear_temp_upload():
+    shutil.rmtree('temp_to_upload')
+    os.mkdir('temp_to_upload')

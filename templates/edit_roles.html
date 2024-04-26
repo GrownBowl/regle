@@ -1,0 +1,28 @@
+{% extends "base_to_login.html" %}
+
+{% block content %}
+    <link href="/static/css/login.css" rel="stylesheet"/>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+          rel="stylesheet">
+    <h1>Редактирование ролей</h1>
+    <form action="" method="POST">
+        {% for user in users %}
+            <div style="display: flex; margin-bottom: 20px; margin-top: 20px">
+                <p style="margin-right: 10px">{{ user.name }}</p>
+                <p style="margin-right: 10px">{{ user.email }}</p>
+                <p style="margin-right: 10px">{{ user.role }}</p>
+                <select name="new_role">
+                    <option value="Участник">Участник</option>
+                    <option value="Администратор">Администратор</option>
+                </select>
+                <input type="hidden" name="user_email" value="{{ user.email }}">
+            </div>
+        {% endfor %}
+
+        <button type="submit" class="btn btn-danger">Изменить</button>
+        <div>{{ message }}</div>
+    </form>
+{% endblock %}

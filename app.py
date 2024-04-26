@@ -135,7 +135,19 @@ def edit_roles():
     db_sess = db_session.create_session()
     users = db_sess.query(User).all()
 
-    return
+    if request.method == "POST":
+        print(1)
+        new_roles = request.form.getlist("new_role")
+        user_emails = request.form.getlist("user_email")
+
+        for new_role, user_email in zip(new_roles, user_emails):
+            edit_user = db_sess.query(User).filter(User.email == user_email).first()
+            edit_user.role = new_role
+            db_sess.commit()
+
+        return render_template("edit_roles.html", users=users)
+
+    return render_template("edit_roles.html", users=users)
 
 
 @app.route('/errors', methods=["POST", "GET"])
@@ -197,9 +209,11 @@ def convertor(filename, from_cloud):
                         'temp_to_download')
 
         if len(file_names) > 1:
+            clear_temp_upload()
             return redirect("/cloud")
 
         else:
+            clear_temp_upload()
             return send_from_directory(DOWNLOAD_FOLDER, f'{get_only_file_name(filename)}.{to_convert}')
 
     files = zip(file_names, file_sizes)
