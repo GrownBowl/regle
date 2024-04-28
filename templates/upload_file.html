@@ -10,7 +10,7 @@
     <div class="convert-subtitle">
         Загрузите свой файл ниже, чтобы начать его конвертацию
     </div>
-    <div style="color: #A52D1D">
+    <div style="color: #A52D1D; text-align: center; font-size: 24px">
         {{ message }}
     </div>
     <div class="main-div">
@@ -25,8 +25,8 @@
             </label>
         </form>
         {% if current_user.is_authenticated %}
-                <button class="from-regle" onclick="onclick=document.location='/convert_from_cloud'"><img
-                        src="/static/img/from_cloud.png" alt="file from cloud"/></button>
+            <button class="from-regle" onclick="onclick=document.location='/convert_from_cloud'"><img
+                    src="/static/img/from_cloud.png" alt="file from cloud"/></button>
         {% endif %}
     </div>
 {% endblock %}

@@ -22,11 +22,11 @@ DOWNLOAD_FOLDER = os.path.join(path_link, "temp_to_download")
 application = Flask(__name__)
 
 application.config.update(
-    MAIL_SERVER='smtp.yandex.ru',
+    MAIL_SERVER='mail.hosting.reg.ru',
     MAIL_PORT=465,
     MAIL_USE_SSL=True,
-    MAIL_USERNAME='retsya.erno@yandex.ru',
-    MAIL_PASSWORD='iynmfbfiqrlfdqdz'
+    MAIL_USERNAME='support@regle.ru',
+    MAIL_PASSWORD='e5e-RBq-prR-YK3'
 )
 
 mail = Mail(application)
@@ -50,13 +50,12 @@ def send_email(subject, sender, recipients, text_body):
     msg = Message(subject, sender=sender, recipients=recipients)
     msg.body = text_body
     mail.send(msg)
-    # logging.info(f'Отправлено сообщение на почту {recipients}')
 
 
 def send_password_reset_email(user):
     token = user.get_reset_password_token()
     send_email('[Regle] Сброс пароля',
-               sender="retsya.erno@yandex.ru",
+               sender="support@regle.ru",
                recipients=[user.email],
                text_body=render_template('reset_password.txt',
                                          user=user, token=token)
