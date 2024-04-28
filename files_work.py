@@ -24,7 +24,7 @@ def get_storage(path):
 
 
 def create_directory(name):
-    path = os.path.join(path_link, name)
+    path = os.path.join('users_date', name)
     os.mkdir(path)
 
 

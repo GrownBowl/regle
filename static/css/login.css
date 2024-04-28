@@ -1,5 +1,5 @@
 body {
-    font-family: "Montserrat ExtraBold", serif;
+    font-family: "Montserrat Alternates", sans-serif;
     color: #FFFFFF;
     background: #211D1D;
 }
@@ -81,7 +81,7 @@ body {
 .admin-div {
     margin-top: 30px;
     display: grid;
-    font-family: "Montserrat", serif;
+    font-family: "Montserrat Alternates", sans-serif;
     background: #595555;
     border-radius: 10px;
 }

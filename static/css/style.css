@@ -3,7 +3,7 @@ input[type=file] {
 }
 
 body {
-    font-family: "Montserrat ExtraBold", serif;
+    font-family: "Montserrat Alternates", serif;
     color: #FFFFFF;
     background: #211D1D;
 }
@@ -105,7 +105,7 @@ input[type=submit] {
 }
 
 .file-name {
-    font-family: "Montserrat", serif;
+    font-family: "Montserrat Alternates", sans-serif;
     font-size: 30px;
     margin-top: auto;
     margin-bottom: auto;
@@ -113,7 +113,7 @@ input[type=submit] {
 }
 
 .file-size {
-    font-family: "Montserrat", serif;
+    font-family: "Montserrat Alternates", sans-serif;
     font-size: 30px;
     margin-top: auto;
     margin-bottom: auto;
@@ -238,7 +238,7 @@ input[type=submit] {
     margin-top: 70px;
     margin-left: 50px;
     margin-right: 50px;
-    font-family: "Montserrat", serif;
+    font-family: "Montserrat Alternates", sans-serif;
     font-size: 30px;
     text-align: left;
 }
@@ -319,7 +319,7 @@ input[type=submit] {
 }
 
 .cloud-filename {
-    font-family: "Montserrat", serif;
+    font-family: "Montserrat Alternates", sans-serif;
     font-size: 25px;
     margin-left: 50px;
     margin-top: 17px;
@@ -327,7 +327,7 @@ input[type=submit] {
 }
 
 .cloud-size {
-    font-family: "Montserrat", serif;
+    font-family: "Montserrat Alternates", sans-serif;
     font-size: 25px;
     margin-top: 17px;
     margin-bottom: 20px;
