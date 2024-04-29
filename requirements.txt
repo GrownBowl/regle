@@ -1,0 +1,9 @@
+SQLAlchemy
+PyJWT
+werkzeug
+convertapi
+flask
+python-dotenv
+flask-login
+flask-mail
+flask-wtf

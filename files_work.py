@@ -1,8 +1,6 @@
 import os
 import shutil
 
-from config import *
-
 ALLOWED_EXTENSIONS = set(
     ["ico", "jpeg", "jpg", "bmp", "png", "odt", "doc", "docx", "dwg", "csv", "pdf", "ai", "pps", "ppt", "pptx", "psd",
      "rtf", "svg", "xls", "xlsx"])

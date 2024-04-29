@@ -1,4 +1,5 @@
 import os
+import dotenv
 
 import convertapi
 
@@ -16,28 +17,31 @@ from data.users import User
 from data import db_session
 from config import *
 
+dotenv_file = dotenv.find_dotenv()
+dotenv.load_dotenv(dotenv_file)
+
 UPLOAD_FOLDER = os.path.join(path_link, "temp_to_upload")
 DOWNLOAD_FOLDER = os.path.join(path_link, "temp_to_download")
 
 application = Flask(__name__)
 
 application.config.update(
-    MAIL_SERVER='mail.hosting.reg.ru',
+    MAIL_SERVER=os.getenv("MAIL_SERVER"),
     MAIL_PORT=465,
     MAIL_USE_SSL=True,
-    MAIL_USERNAME='support@regle.ru',
-    MAIL_PASSWORD='e5e-RBq-prR-YK3'
+    MAIL_USERNAME=os.getenv("MAIL_USERNAME"),
+    MAIL_PASSWORD=os.getenv("MAIL_PASSWORD")
 )
 
 mail = Mail(application)
 
-application.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
+application.config['SECRET_KEY'] = os.getenv("FLASK_API_SECRET")
 application.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 login_manager = LoginManager()
 login_manager.init_app(application)
 
-convertapi.api_secret = 'zywDTXAK6CL2tPRK'
+convertapi.api_secret = os.getenv("CONVERT_API_SECRET")
 
 
 @login_manager.user_loader
@@ -237,6 +241,9 @@ def upload():
             return redirect(request.url)
 
         file_names = []
+
+        if len(request.files.getlist("files")) > 1 and not current_user.is_authenticated:
+            return render_template("upload_file.html", message="Необходимо загрузить один файл!")
 
         if len(request.files.getlist("files")) > 5:
             return render_template("upload_file.html", message='Необходимо загружать не более 5 файлов!')
