@@ -1,4 +1,4 @@
-path_link = "C:\\Users\\children\\Desktop\\regle"
+path_link = "C:\\Users\\children\\Desktop\\regle"  # путь где лежит проект
 
 convertible = {
     "ico": ["png", "svg", "jpg"],
@@ -25,6 +25,12 @@ convertible = {
 
 
 def check_password(password: str) -> bool:
+    """
+    Функция проверяющая корректность пароля
+    :param password: пароль
+    :return: Bool
+    """
+
     count_digits = 0
     count_uppers = 0
     count_lowers = 0
