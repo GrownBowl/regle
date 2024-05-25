@@ -214,6 +214,11 @@ def main_menu():  # put application's code here
     return render_template("index.html")
 
 
+@application.route('/computer_device')
+def computer_device():
+    return render_template('computer_device.html')
+
+
 @application.route('/cloud')
 @login_required
 def cloud():

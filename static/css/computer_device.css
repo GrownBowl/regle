@@ -1,0 +1,110 @@
+body {
+    font-family: "Montserrat Alternates", serif;
+    color: #FFFFFF;
+    background: #211D1D;
+}
+
+.img_align {
+    display: table-cell;
+    height: 300px;
+    text-align: center;
+    width: 300px;
+    vertical-align: middle;
+}
+
+.headlines-h1 {
+    color: #A52D1D;
+}
+
+.headlines-h2 {
+    padding-top: 25px;
+    padding-bottom: 10px;
+    color: #A52D1D;
+    text-align: center;
+}
+
+.plain-text {
+    font-size: 22px;
+    text-align: justify;
+}
+
+.regle-navbar {
+    width: auto;
+    height: 90px;
+    background: #964B06;
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.nav-div {
+    display: flex;
+}
+
+.nav-regle {
+    margin-left: 20px;
+    font-family: "Jua", sans-serif;
+    font-size: 65px;
+    vertical-align: middle;
+}
+
+.a-glav {
+    font-size: 25px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 150px;
+    color: #FFFFFF;
+}
+
+.a-convert {
+    font-size: 25px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 50px;
+    color: #FFFFFF;
+}
+
+.a-cloud {
+    font-size: 25px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 50px;
+    color: #FFFFFF;
+}
+
+.a-glav:hover {
+    color: gray;
+    text-decoration: none;
+}
+
+.a-convert:hover {
+    color: gray;
+    text-decoration: none;
+}
+
+.a-cloud:hover {
+    color: gray;
+    text-decoration: none;
+}
+
+.button-nav {
+    width: 200px;
+    height: 60px;
+    border-radius: 20px;
+    border: none;
+    color: #FFFFFF;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 320px;
+    background: #A52D1D;
+    text-align: center;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.img-style {
+    display: block;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    margin-left: auto;
+    margin-right: auto;
+}
